@@ -27,4 +27,13 @@ class Product:
         else:
             self.__price = price
 
+    def __add__(self, other):
+        return self.price*self.quantity + other.price*other.quantity
+
+    def __len__(self):
+        return self.quantity
+
+    def __str__(self):
+        return f'{self.name}, {self.price} руб. Остаток: {self.quantity} шт.\n'
+
 

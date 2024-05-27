@@ -5,7 +5,7 @@ class Category:
     """
     Класс для категорий товара
     """
-    category_count = 0
+    category_count = 0 # подсчет количества категорий
     product_count = 0
 
     def __init__(self, name, description, products):
@@ -25,5 +25,10 @@ class Category:
         for product in self.__products:
             result += f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n'
         return result
+
+    def __str__(self):
+        return (f'{self.name}, количество продуктов: '
+                f'{sum(i.quantity for i in self.__products)} шт.'
+                )
 
 
